@@ -10,4 +10,14 @@
 
 int check_cycle(listint_t *list)
 {
+	listint_t *check_one = list, *check_two = list;
+
+    while (check_one && check_two && check_two->next)
+	{
+		check_one = check_one->next;
+		check_two = check_two->next->next;
+		if (check_one == check_two)
+			return (1);
+	}
+	return (0);
 }
