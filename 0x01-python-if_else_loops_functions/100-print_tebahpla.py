@@ -1,3 +1,6 @@
 #!/usr/bin/python3
-for letter in range(ord('z'), ord('a') - 1, -1):
-    print("{:c}".format((letter - (ord('a') - ord('A'))) if letter % 2 else letter), end='')
+for i in range(122, 96, -1):
+    if i % 2 != 0:
+        i = i - 32
+    print("{}".format(chr(i)), end="")
+
