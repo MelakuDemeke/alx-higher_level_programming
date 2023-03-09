@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 if __name__ == "__main__":
-    from calculator_1 import add, sub, mul,div
+    from calculator_1 import add, sub, mul, div
     import sys
 
     alen = len(sys.argv)
@@ -10,17 +10,17 @@ if __name__ == "__main__":
         exit(1)
 
     oprator = sys.argv[2]
-    first_num = int(sys.argv[1])
-    second_num = int(sys.argv[3])
+    f_num = int(sys.argv[1])
+    s_num = int(sys.argv[3])
 
     if oprator == "+":
-        print("{} {} {} = {}".format(first_num, oprator, second_num, add(first_num, second_num)))
+        print("{} {} {} = {}".format(f_num, oprator, s_num, add(f_num, s_num)))
     elif oprator == "-":
-        print("{} {} {} = {}".format(first_num, oprator, second_num, sub(first_num, second_num)))
+        print("{} {} {} = {}".format(f_num, oprator, s_num, sub(f_num, s_num)))
     elif oprator == "*":
-        print("{} {} {} = {}".format(first_num, oprator, second_num, mul(first_num, second_num)))
+        print("{} {} {} = {}".format(f_num, oprator, s_num, mul(f_num, s_num)))
     elif oprator == "/":
-        print("{} {} {} = {}".format(first_num, oprator, second_num, div(first_num, second_num)))
+        print("{} {} {} = {}".format(f_num, oprator, s_num, div(f_num, s_num)))
     else:
         print("Unknown operator. Available operators: +, -, * and /")
         quit(1)
