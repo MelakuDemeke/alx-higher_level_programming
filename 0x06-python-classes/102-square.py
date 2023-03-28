@@ -45,3 +45,7 @@ class Square:
 
     def __le__(self, other):
         return self.area() <= other.area()
+
+    def __gt__(self, other):
+        return self.area() > other.area()
+
