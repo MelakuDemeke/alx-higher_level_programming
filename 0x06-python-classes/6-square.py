@@ -4,7 +4,7 @@
 
 class Square:
     """ Represent a square """
-    def __init__(self, size=0, position=(0,0)):
+    def __init__(self, size=0, position=(0, 0)):
         """ Square initializer.
         Args:
             size (int): The size of the square
@@ -14,6 +14,7 @@ class Square:
         elif size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
+        self.__position = position
 
     def area(self):
         """ Return the the area of the square"""
@@ -37,9 +38,9 @@ class Square:
 
     @position.setter
     def position(self, value):
-        if(not isinstance(value, tuple) or
+        if (not isinstance(value, tuple) or
            len(value) != 2 or
-           not all(isinstance(num, int) for num in value)or
+           not all(isinstance(num, int) for num in value) or
            not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
