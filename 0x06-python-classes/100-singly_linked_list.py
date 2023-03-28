@@ -10,3 +10,12 @@ class Node:
 
         self.__data = data
         self.__next_node = next_node
+
+    @property
+    def data(self):
+        return self.__data
+
+    @data.setter
+    def data(self, value):
+        if not isinstance(value, int):
+            raise TypeError("data must be an integer")
