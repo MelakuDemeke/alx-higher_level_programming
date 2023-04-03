@@ -15,3 +15,9 @@ def create_board(n):
     [board.append([]) for i in range(n)]
     [row.append(' ') for i in range(n) for row in board]
     return(board)
+
+def board_deepcopy(board):
+    """Return a deepcopy of a chessboard."""
+    if isinstance(board, list):
+        return list(map(board_deepcopy, board))
+    return (board)
