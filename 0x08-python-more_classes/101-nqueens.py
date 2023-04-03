@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """Solve the N-queens puzzle
 Determine all posible soluton to place N
 
