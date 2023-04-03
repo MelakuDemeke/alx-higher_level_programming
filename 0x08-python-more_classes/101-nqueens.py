@@ -8,7 +8,10 @@ Attributes:
 """
 import sys
 
-def init_board(n):
-    """initialize an n x n sized chaseboard with 0's """
-    pass
 
+def create_board(n):
+    """initialize an n x n sized chaseboard with 0's """
+    board = []
+    [board.append([]) for i in range(n)]
+    [row.append(' ') for i in range(n) for row in board]
+    return(board)
