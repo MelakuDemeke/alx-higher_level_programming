@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-"""MyList class that drives from list"""
+"""Defines derived class MyList from list"""
 
 
 class MyList(list):
-    """a subclass of list"""
-    def __init__(self):
-        """initializes the object"""
-        super().__init__()
+    """drived class"""
 
     def print_sorted(self):
-        """prints the sorted list"""
+        """Print a list in sorted ascending order"""
         print(sorted(self))
