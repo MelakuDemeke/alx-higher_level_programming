@@ -1,24 +1,25 @@
 #!/usr/bin/python3
-"""Adds all arguments to a list and saves them to a JSON file."""
+"""
+Adds all arguments to a Python list and saves them to a file.
+"""
+
 import sys
-import json
-import os.path
+from os import path
+from save_to_json_file import save_to_json_file
+from load_from_json_file import load_from_json_file
 
-FILENAME = "add_item.json"
+# Get the command line arguments, ignoring the first argument which is the
+# name of the script itself
+args = sys.argv[1:]
 
-def read_items():
-    """Read items from the JSON file, or return an empty list."""
-    if os.path.isfile(FILENAME):
-        with open(FILENAME) as f:
-            return json.load(f)
-    return []
+# Load the list from the JSON file if it exists
+if path.exists("add_item.json"):
+    my_list = load_from_json_file("add_item.json")
+else:
+    my_list = []
 
-def write_items(items):
-    """Write items to the JSON file."""
-    with open(FILENAME, "w") as f:
-        json.dump(items, f)
+# Add the arguments to the list
+my_list.extend(args)
 
-if __name__ == "__main__":
-    items = read_items()
-    items += sys.argv[1:]
-    write_items(items)
+# Save the updated list to the JSON file
+save_to_json_file(my_list, "add_item.json")
