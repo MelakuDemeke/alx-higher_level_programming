@@ -1,10 +1,11 @@
 #!/usr/bin/python3
 """create base class"""
 
+
 class Base:
     """implementation of base class"""
     __nb_objects = 0
-    
+
     def __init__(self, id=None):
         """initialize a new base
         Args:
@@ -15,5 +16,3 @@ class Base:
         else:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
-        
-        
