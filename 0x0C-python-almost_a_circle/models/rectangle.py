@@ -7,7 +7,18 @@ class Rectangle(Base):
     """Represent a new rectangle"""
 
     def __init__(self, width, height, x=0, y=0, id=None):
-        """write better doc here"""
+        """Initialize a new Rectangle.
+
+        Args:
+            width (int): The width of the new Rectangle
+            height (int): The height of the new Rectangle
+            x (int): The x coordinate of the new Rectangle
+            y (int): The y coordinate of the new Rectangle
+            id (int): The identity of the new Rectangle
+        Raises:
+            TypeError: If either of width, height, x or y is not an int
+            ValueError: If either of width, height, x or y is <= 0
+        """
         self.width = width
         self.height = height
         self.x = x
