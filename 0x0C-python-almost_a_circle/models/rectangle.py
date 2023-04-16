@@ -77,6 +77,30 @@ class Rectangle(Base):
         """Return area for rectangle"""
         return self.width * self.height
 
+    def update(self, *args, **kwargs):
+        """Update the Rectangle.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
+        arg_names = ["id", "width", "height", "x", "y"]
+
+        # Update attributes using args
+        for i, arg in enumerate(args):
+            if arg is not None:
+                setattr(self, arg_names[i], arg)
+
+        # Update attributes using kwargs
+        for k, v in kwargs.items():
+            if k in arg_names:
+                setattr(self, k, v)
+
     def display(self):
         """Print the Rectangle using the `#` character"""
         if self.width == 0 or self.height == 0:
