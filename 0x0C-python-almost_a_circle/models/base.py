@@ -171,4 +171,3 @@ class Base:
             draw_shape(sq, "#ff00ff")
 
         turtle.exitonclick()
-
