@@ -2,6 +2,7 @@
 """define rectagle class"""
 from models.base import Base
 
+
 class Rectangle(Base):
     """Represent a new rectangle"""
 
