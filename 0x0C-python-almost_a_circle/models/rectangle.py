@@ -101,6 +101,16 @@ class Rectangle(Base):
             if k in arg_names:
                 setattr(self, k, v)
 
+    def to_dictionary(self):
+        """Return the dictionary representation of a Rectangle"""
+        return {
+            "id": self.id,
+            "width": self.width,
+            "height": self.height,
+            "x": self.x,
+            "y": self.y
+        }
+
     def display(self):
         """Print the Rectangle using the `#` character"""
         if self.width == 0 or self.height == 0:
