@@ -1,8 +1,8 @@
 -- Select the city and calculate the average temperature
-SELECT city, AVG('value') AS avg_temp
+SELECT `city`, AVG(`value`) AS `avg_temp`
 -- From the weather_data table
-FROM temperatures
+FROM `temperatures`
 -- Group the results by city
-GROUP BY city
+GROUP BY `city`
 -- Order the results by average temperature in Fahrenheit, descending
-ORDER BY avg_temp DESC;
+ORDER BY `avg_temp` DESC;
