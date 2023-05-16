@@ -1,6 +1,6 @@
 -- Select the city and calculate the average temperature
 SELECT `city`, AVG(`value`) AS `avg_temp`
--- From the weather_data table
+-- From the temperatures table
 FROM `temperatures`
 -- Group the results by city
 GROUP BY `city`
