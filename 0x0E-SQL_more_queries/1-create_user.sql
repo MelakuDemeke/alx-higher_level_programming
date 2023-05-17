@@ -1,11 +1,8 @@
--- This script will create the MySQL user user_0d_1 with all privileges and a password of user_0d_1_pwd, if the user does not already exist.
+-- This script creates the MySQL user user_0d_1 with all privileges.
+-- If the user already exists, the script will not fail.
 
--- Check if the user already exists
-SELECT EXISTS(SELECT 1 FROM mysql.user WHERE user = 'user_0d_1');
+-- Create the user user_0d_1 with the password user_0d_1_pwd if it doesn't already exist.
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
 
--- If the user doesn't exist, create it and grant all privileges on all databases
-CREATE USER 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
+-- Grant all privileges on all databases to the user user_0d_1.
 GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost';
-
--- Flush privileges to apply changes
-FLUSH PRIVILEGES;
