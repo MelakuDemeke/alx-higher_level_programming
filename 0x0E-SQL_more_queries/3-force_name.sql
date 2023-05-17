@@ -5,5 +5,4 @@ CREATE TABLE IF NOT EXISTS `force_name` (
   -- Define the name column as a non-null string
   `name` VARCHAR(256) NOT NULL,
   -- Define the id column as the primary key of the table
-  PRIMARY KEY (`id`)
 );
