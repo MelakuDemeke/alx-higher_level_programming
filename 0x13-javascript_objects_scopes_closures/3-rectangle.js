@@ -14,6 +14,7 @@ class Rectangle {
       for (j = 0; j < this.width; i++){
         row += 'X'
       }
+      console.log(row);
     }
   }
 }
