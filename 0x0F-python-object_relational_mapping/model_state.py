@@ -1,23 +1,18 @@
 #!/usr/bin/python3
 """
-This script establishes a connection to a MySQL database
-and creates a table based on the State model.
+Contains State class and Base, an instance of declarative_base()
 """
-import sys
-from model_state import Base, State
+from sqlalchemy import Column, Integer, String, MetaData
+from sqlalchemy.ext.declarative import declarative_base
 
-from sqlalchemy import create_engine
+mymetadata = MetaData()
+Base = declarative_base(metadata=mymetadata)
 
-if __name__ == "__main__":
-    db_username = sys.argv[1]
-    db_password = sys.argv[2]
-    db_name = sys.argv[3]
 
-    db_url = 'mysql+mysqldb://{username}:{password}@localhost/{dbname}'.format(
-        username=db_username,
-        password=db_password,
-        dbname=db_name
-    )
-
-    engine = create_engine(db_url, pool_pre_ping=True)
-    Base.metadata.create_all(engine)
+class State(Base):
+    """
+    Class with id and name attributes of each state
+    """
+    __tablename__ = 'states'
+    id = Column(Integer, unique=True, nullable=False, primary_key=True)
+    name = Column(String(128), nullable=False)
