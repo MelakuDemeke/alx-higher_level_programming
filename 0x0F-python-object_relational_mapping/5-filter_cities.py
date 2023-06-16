@@ -14,7 +14,7 @@ if __name__ == "__main__":
     query = """SELECT cities.name FROM
                 cities INNER JOIN states ON states.id=cities.state_id
                 WHERE states.name=%s"""
-    cur.execute(query, (sys.argv[4],))
+    cur.execute(query, (sys.argv[4], ))
 
     rows = cur.fetchall()
     tmp = list(row[0] for row in rows)
