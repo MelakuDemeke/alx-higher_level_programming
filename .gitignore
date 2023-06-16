@@ -5,3 +5,4 @@ __pycache__/
 *.py[cod]
 sc.sh
 readme.sh
+0x0F-python-object_relational_mapping/sql.sql
