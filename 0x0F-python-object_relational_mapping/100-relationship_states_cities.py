@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 """
-This script retrieves and prints the State
-object from the database based on the provided name.
+This script creates a new State "California"
+with the City "San Francisco" and adds them to the database.
 
 """
 import sys
-from model_state import Base, State
-from model_city import City
-from sqlalchemy import (create_engine)
+from relationship_state import Base, State
+from relationship_city import City
+from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 
@@ -28,3 +28,11 @@ if __name__ == "__main__":
 
     Session = sessionmaker(bind=engine)
     session = Session()
+
+    newState = State(name='California')
+    newCity = City(name='San Francisco')
+    newState.cities.append(newCity)
+
+    session.add(newState)
+    session.add(newCity)
+    session.commit()
