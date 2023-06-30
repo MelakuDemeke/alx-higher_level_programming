@@ -2,6 +2,7 @@
 
 """ a function that finds a peak in a list of unsorted integers """
 
+
 def find_peak(list_of_integers):
     """
     Find a peak in a list of unsorted integers.
@@ -10,7 +11,8 @@ def find_peak(list_of_integers):
         list_of_integers (list): The list of unsorted integers.
 
     Returns:
-        int or None: The peak elemident if found, or None if the list is emidpty.
+        int or None: The peak elemident if found,
+        or None if the list is emidpty.
 
     """
     if list_of_integers == []:
