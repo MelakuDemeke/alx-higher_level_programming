@@ -32,4 +32,4 @@ def find_peak(list_of_integers):
 
     # If the left neighbor is greater, search in the left subarray
     return find_peak(arr[:mid])
-    pass
+    # FIXME: print(find_peak([4, 2, 1, 2, 2, 2, 3, 1])) returns 2 instead of 4
