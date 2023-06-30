@@ -22,14 +22,22 @@ def find_peak(list_of_integers):
     arr = list_of_integers
 
     # Check if the middle element is a peak
-    if (mid == 0 or arr[mid - 1] <= arr[mid]) and \
-            (mid == length - 1 or arr[mid + 1] <= arr[mid]):
+    if (mid - 1 < 0 and mid + 1 >= length):
         return arr[mid]
 
     # If the right neighbor is greater, search in the right subarray
-    if mid < length - 1 and arr[mid + 1] > arr[mid]:
-        return find_peak(arr[mid + 1:])
+    elif mid - 1 < 0:
+        return arr[mid] if arr[mid] >arr[mid + 1] else arr[mid + 1]
+
+    elif mid + 1 >= length:
+        return arr[mid] if arr[mid] > arr[mid - 1] else arr[mid - 1]
+
+    if arr[mid -1] < arr[mid] > arr[mid + 1]:
+        return arr[mid]
+
+    if arr[mid + 1] > arr[mid - 1]:
+        return find_peak(arr[mid:])
 
     # If the left neighbor is greater, search in the left subarray
     return find_peak(arr[:mid])
-    # FIXME: print(find_peak([4, 2, 1, 2, 2, 2, 3, 1])) returns 2 instead of 4
+
