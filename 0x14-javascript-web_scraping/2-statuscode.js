@@ -6,7 +6,7 @@ request(url, function (error, response) {
     if (error) {
         console.error(error);
     } else {
-        console.log('code: ' + response);
+        console.log('code: ' + response.statusCode);
     }
 }
 );
